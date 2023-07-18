@@ -33,7 +33,7 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
 
     //user management
     Route::get('users', [AuthController::class, 'getUsers']); // get all users
-    Route::post('users/writer', [BooksController::class, 'createUser']); // add a new user with writer scope
+    Route::post('users/create', [BooksController::class, 'createUser']); // add a new user with writer scope
     Route::post('users/subscriber', [BooksController::class, 'createSubscriber']); // add a new user with subscriber scope
     Route::delete('users/delete', [AuthController::class, 'deleteUser']); // delete a user
     Route::post('users/update',[AuthController::class,'updateUserInfo']); //update user info

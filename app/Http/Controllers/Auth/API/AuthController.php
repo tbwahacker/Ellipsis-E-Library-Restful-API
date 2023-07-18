@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth\API;
 
+use App\Http\Library\ApiHelpers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\API\AuthBaseController as AuthBaseController;
@@ -11,6 +12,9 @@ use Validator;
 
 class AuthController extends AuthBaseController
 {
+
+    use ApiHelpers;
+
     public function login(Request $request)
     {
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
@@ -76,10 +80,10 @@ class AuthController extends AuthBaseController
 
     public function deleteUser(Request $request): \Illuminate\Http\JsonResponse
     {
-        //$user = $request->user();
-        // if ($this->isAdmin($user)){
+        $user = $request->user();
+        if ($this->isAdmin($user)){
             $user = User::find($request->id);     // Find the id of the user passed
-            if ($user->role !== 1){
+            if (Auth::user()->role==1){
                 $user->delete();         // Delete the specific user
                 if (!empty($user)){
                     return response()->json([
@@ -91,8 +95,13 @@ class AuthController extends AuthBaseController
                     'success' => false,
                     'message' => 'User Not Found'
                 ]);
+            }else{
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Only Admin Access needed'
+                ]);
             }
-        // }
+        }
         return response()->json([
             'success' => false,
             'message' => 'Unauthorized Access'
