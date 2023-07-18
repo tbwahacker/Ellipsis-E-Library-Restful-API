@@ -1,4 +1,4 @@
-Documentation
+## Documentation
 
 1). Tech stack for backend
 
@@ -38,61 +38,61 @@ First of all , rename .env copy to .env then run `composer install`
 - open your app for easy testing the Restfull API  
 
 - note: Do not forget to create the admin account through the web link (for the first time)
- http://192.168.46.105:8000/login
+ https://ellipsiselibrary.000webhostapp.com/login
 
 
 3). API end-points
 
 ## User Management
 - admin can create user (POST)
-http://192.168.46.105:8000/api/users/create
+https://ellipsiselibrary.000webhostapp.com/api/users/create
 
 - admin can Edit user (POST)
-http://192.168.46.105:8000/api/users/update
+https://ellipsiselibrary.000webhostapp.com/api/users/update
 
 - admin can delete user (DELETE)
-http://192.168.46.105:8000/api/users/delete
+https://ellipsiselibrary.000webhostapp.com/api/users/delete
 
 - admin can get all users through
-http://192.168.46.105:8000/api/users
+https://ellipsiselibrary.000webhostapp.com/api/users
 
 - App user login (POST)
-http://192.168.46.105:8000/api/login
+https://ellipsiselibrary.000webhostapp.com/api/login
 
 - App user logout (GET)
-http://192.168.46.105:8000/api/logout
+https://ellipsiselibrary.000webhostapp.com/api/logout
 
 
 ## Book
 - create book (POST)
-http://192.168.46.105:8000/api/books/create?title=booktitle&content=book_description_or_author_etc
+https://ellipsiselibrary.000webhostapp.com/api/books/create?title=booktitle&content=book_description_or_author_etc
 
 - get all books by paging (GET)
-http://192.168.46.105:8000/api/books?page=4
+https://ellipsiselibrary.000webhostapp.com/api/books?page=4
 
 -admin can delete book (where id = book_id) (DELETE)
-http://192.168.46.105:8000/api/books/delete?id=4
+https://ellipsiselibrary.000webhostapp.com/api/books/delete?id=4
 
 - admin can Edit book (where id = book_id) (PUT)
-http://192.168.46.105:8000/api/books/update?id=&content=&title=
+https://ellipsiselibrary.000webhostapp.com/api/books/update?id=&content=&title=
 
 
 ## Comments
 - create comments (where id = book_id) (POST)
-http://192.168.46.105:8000/api/comments/create?id=1&comment=your_comment
+https://ellipsiselibrary.000webhostapp.com/api/comments/create?id=1&comment=your_comment
 
 - get all comments (where id = book_id) (GET)
-http://192.168.46.105:8000/api/books/comments?id=4
+https://ellipsiselibrary.000webhostapp.com/api/books/comments?id=4
 
 -admin can delete comments (where id = comment_id) (DELETE)
-http://192.168.46.105:8000/api/comments/delete?id=4
+https://ellipsiselibrary.000webhostapp.com/api/comments/delete?id=4
 
 
 ## Likes
 - Like and unlike a book (POST)
-http://192.168.46.105:8000/api/books/like?book_id=2&user_id=5
+https://ellipsiselibrary.000webhostapp.com/api/books/like?book_id=2&user_id=5
 
 - Mark and Unmark a favourite book (POST)
-http://192.168.46.105:8000/api/books/mark?book_id=2&user_id=5
+https://ellipsiselibrary.000webhostapp.com/api/books/mark?book_id=2&user_id=5
 
 
